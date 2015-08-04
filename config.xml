@@ -1,0 +1,28 @@
+<config>
+   <datasets/>
+   <threddsCatalog> </threddsCatalog>
+   <contact>
+      <name> </name>
+      <organization> </organization>
+      <telephone> </telephone>
+      <email> </email>
+   </contact>
+   <server>
+      <title>My ncWMS server</title>
+      <allowFeatureInfo>true</allowFeatureInfo>
+      <maxImageWidth>1024</maxImageWidth>
+      <maxImageHeight>1024</maxImageHeight>
+      <abstract> </abstract>
+      <keywords> </keywords>
+      <url> </url>
+      <adminpassword>ncWMS</adminpassword>
+      <allowglobalcapabilities>true</allowglobalcapabilities>
+   </server>
+   <cache enabled="false">
+      <elementLifetimeMinutes>1440</elementLifetimeMinutes>
+      <maxNumItemsInMemory>200</maxNumItemsInMemory>
+      <enableDiskStore>true</enableDiskStore>
+      <maxNumItemsOnDisk>2000</maxNumItemsOnDisk>
+   </cache>
+   <dynamicServices/>
+<config>

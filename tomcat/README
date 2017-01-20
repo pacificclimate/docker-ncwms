@@ -1,0 +1,1 @@
+This directory just contains a couple optional tomcat config files that you can link in to the contain if you need to debug the tomcat install using the manager webapp.

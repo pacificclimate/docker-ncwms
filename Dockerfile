@@ -1,5 +1,5 @@
-FROM tomcat:7.0
-MAINTAINER Basil Veerman <bveerman@uvic.ca>
+FROM tomcat:9-jre8
+MAINTAINER James Hiebert <hiebert@uvic.ca>
 
 ENV NCWMS_VERSION 2.2.5
 

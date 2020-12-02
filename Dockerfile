@@ -6,8 +6,9 @@ ARG RUN_USER=tomcat
 ARG RUN_GROUP=tomcat
 RUN groupadd -r ${RUN_GROUP} && \
     useradd -g ${RUN_GROUP} -d ${CATALINA_HOME} -s /bin/bash ${RUN_USER} && \
-    chown -R tomcat:tomcat $CATALINA_HOME
-
+    chown -R tomcat:tomcat $CATALINA_HOME && \
+    mkdir -p /usr/local/tomcat/.ncWMS2 && \
+    chown tomcat:tomcat /usr/local/tomcat/.ncWMS2
 USER ${RUN_USER}
 
 # Download and unpack the full EPSG geodetic dataset

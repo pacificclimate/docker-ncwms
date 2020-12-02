@@ -5,16 +5,22 @@ services:
     image: pcic/docker-ncwms:${VERSION}
     container_name: ncwms-${VERSION}
     ports:
-      - "30780:8080"
+      - "${PORT}:8080"
     volumes:
       # Tomcat configuration
       - type: bind
         source: ${DEPLOY_DIR}/tomcat/tomcat-users.xml
         target: /usr/local/tomcat/conf/tomcat-users.xml
-      # ncWMS2 configuration: config.xml, .palettes, etc.
+
+      # ncWMS2 configuration
       - type: bind
-        source: ${DEPLOY_DIR}/.ncWMS2
-        target: /usr/local/tomcat/.ncWMS2
+        source: ${DEPLOY_DIR}/.ncWMS2/config.xml
+        target: /usr/local/tomcat/.ncWMS2/config.xml
+      - type: bind
+        source: ${DEPLOY_DIR}/.ncWMS2/.palettes
+        target: /usr/local/tomcat/.ncWMS2/.palettes
+        read_only: true
+
       # Data volumes
       - type: bind
         source: /storage/data/projects/comp_support/climate_explorer_data_prep

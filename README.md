@@ -30,9 +30,9 @@ To deploy an instance of `docker-ncwms`:
    - Change the value of `DEPLOY_DIR` to the deployment directory you created.
    - Change the value of `VERSION` to the version of `docker-ncwms` you wish to 
      deploy (e.g., `VERSION=2.5.1-a`).
+   - Change the value of `PORT` to the port you wish the service to be
+     exposed on.
 1. Edit your copy of `docker-compose.yaml` as follows:
-   - Change the port mapping (`ports`) to the desired port.
-     (TODO: This may be better done as an environment variable in `.env`.)
    - Modify the data volume mounts as necessary. 
      If these are enduring changes, please update `docker-compose.yaml`
      in this project.
@@ -40,7 +40,8 @@ To deploy an instance of `docker-ncwms`:
    - The configuration file in this repo configures
      a single dynamic dataset with prefix `x`, and no static datasets.
      This is correct for intended usage at the present time. 
-1. Use `docker-compose` to start, stop, and restart the container as necessary.
+1. *From the deployment directory* (necessary to get the environment variables),
+   use `docker-compose` to start, stop, and restart the container as necessary.
 
 Notes:
 

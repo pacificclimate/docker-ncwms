@@ -20,6 +20,5 @@ jobs:
         with:
           username: ${{ secrets.pcicdevops_at_dockerhub_username }}
           password: ${{ secrets.pcicdevops_at_dockerhub_password }}
-          dockerfile: ./docker/production/Dockerfile
           repository: pcic/docker-ncwms
           tag_with_ref: true

@@ -11,12 +11,21 @@ Note: `docker-ncwms` version numbers are a compound of the ncWMS version
 
 To deploy an instance of `docker-ncwms`:
 
-1. Create a deployment directory.
-1. Copy the following files and directories to the deployment directory:
+1. Create a deployment directory and
+   copy the following files and directories into it:
    - `tomcat/config.xml`
    - `.env`
    - `docker-compose.yaml`
    - `.ncWMS2/`
+   - Thus:
+     ```
+     mkdir -p deploy/tomcat
+     cp tomcat/tomcat-users.xml deploy/tomcat/
+     cp .env docker-compose.yaml deploy/
+     cp -r .ncWMS2/ deploy/  
+     ```
+1. Edit your copy of `tomcat/config.xml` as follows:
+   - Replace the password placeholder with the password for this instance.
 1. Edit your copy of `.env` as follows:
    - Change the value of `DEPLOY_DIR` to the deployment directory you created.
    - Change the value of `VERSION` to the version of `docker-ncwms` you wish to 

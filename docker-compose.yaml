@@ -16,27 +16,27 @@ services:
         source: ${DEPLOY_DIR}/.ncWMS2
         target: /usr/local/tomcat/.ncWMS2
       # Data volumes
-     - type: bind
-       source: /storage/data/projects/comp_support/climate_explorer_data_prep
-       target: /storage/data/projects/comp_support/climate_explorer_data_prep
-       read_only: true
-     - type: bind
-       source: /storage/data/climate/downscale/CMIP5
-       target: /storage/data/climate/downscale/CMIP5
-       read_only: true
-     - type: bind
-       source: /storage/data/climate/downscale/BCCAQ2
-       target: /storage/data/climate/downscale/BCCAQ2
-       read_only: true
-     - type: bind
-       source: /storage/data/projects/dataportal/data
-       target: /storage/data/projects/dataportal/data
-       read_only: true
-     - type: bind
-       source: /storage/data/climate/PRISM/dataportal
-       target: /storage/data/climate/PRISM/dataportal
-       read_only: true
-     - type: bind
-       source: /storage/data/projects/hydrology/dataportal
-       target: /storage/data/projects/hydrology/dataportal
-       read_only: true
+      - type: bind
+        source: /storage/data/projects/comp_support/climate_explorer_data_prep
+        target: /storage/data/projects/comp_support/climate_explorer_data_prep
+        read_only: true
+      - type: bind
+        source: /storage/data/climate/downscale/CMIP5
+        target: /storage/data/climate/downscale/CMIP5
+        read_only: true
+      - type: bind
+        source: /storage/data/climate/downscale/BCCAQ2
+        target: /storage/data/climate/downscale/BCCAQ2
+        read_only: true
+      - type: bind
+        source: /storage/data/projects/dataportal/data
+        target: /storage/data/projects/dataportal/data
+        read_only: true
+      - type: bind
+        source: /storage/data/climate/PRISM/dataportal
+        target: /storage/data/climate/PRISM/dataportal
+        read_only: true
+      - type: bind
+        source: /storage/data/projects/hydrology/dataportal
+        target: /storage/data/projects/hydrology/dataportal
+        read_only: true

@@ -5,6 +5,10 @@ to indicate local changes to the Docker image or to supporting infrastructure
 such as the `docker-compose.yaml` or other configuration files. 
 Example: `2.2.5-a` = ncWMS 2.2.5, local release "a".
 
+## 2.5.1-b
+
+This release triggers a correctly tagged Docker image. No changes.
+
 ## 2.5.1-a
 
 This release:

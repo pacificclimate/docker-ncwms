@@ -5,8 +5,7 @@ on:
     branches:
       - '*'
     tags:
-      - '[0-9]+.[0-9]+.[0-9]+'
-  pull_request:
+      - '[0-9]+\.[0-9]+\.[0-9]+-[a-z]+'
 
 jobs:
   publish-production:

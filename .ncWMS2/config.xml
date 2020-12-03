@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config>
+   <datasets>
+   </datasets>
+   <cache enabled="false">
+      <inMemorySizeMB>512</inMemorySizeMB>
+      <elementLifetimeMinutes>0.0</elementLifetimeMinutes>
+   </cache>
+   <dynamicServices>
+      <dynamicService alias="x" servicePath="/" datasetIdMatch=".*\.nc.*" dataReaderClass="" copyrightStatement="" moreInfoUrl="" disabled="false" queryable="true" downloadable="false"/>
+   </dynamicServices>
+   <dynamicCache enabled="false">
+      <numberOfDatasets>10</numberOfDatasets>
+      <elementLifetimeMinutes>0.0</elementLifetimeMinutes>
+   </dynamicCache>
+   <contact>
+      <name></name>
+      <organization></organization>
+      <telephone></telephone>
+      <email></email>
+   </contact>
+   <server>
+      <title>ncWMS Server</title>
+      <allowFeatureInfo>true</allowFeatureInfo>
+      <maxImageWidth>1024</maxImageWidth>
+      <maxImageHeight>1024</maxImageHeight>
+      <abstract></abstract>
+      <keywords></keywords>
+      <url></url>
+      <allowglobalcapabilities>true</allowglobalcapabilities>
+   </server>
+   <crsCodes/>
+</config>

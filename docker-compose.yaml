@@ -1,0 +1,48 @@
+# Sample docker-compose for testing and, with mods, production
+version: '2.3'
+services:
+  ncwms:
+    image: pcic/docker-ncwms:${VERSION}
+    container_name: ncwms-${VERSION}
+    ports:
+      - "${PORT}:8080"
+    volumes:
+      # Tomcat configuration
+      - type: bind
+        source: ${DEPLOY_DIR}/tomcat/tomcat-users.xml
+        target: /usr/local/tomcat/conf/tomcat-users.xml
+
+      # ncWMS2 configuration
+      - type: bind
+        source: ${DEPLOY_DIR}/.ncWMS2/config.xml
+        target: /usr/local/tomcat/.ncWMS2/config.xml
+      - type: bind
+        source: ${DEPLOY_DIR}/.ncWMS2/.palettes
+        target: /usr/local/tomcat/.ncWMS2/.palettes
+        read_only: true
+
+      # Data volumes
+      - type: bind
+        source: /storage/data/projects/comp_support/climate_explorer_data_prep
+        target: /storage/data/projects/comp_support/climate_explorer_data_prep
+        read_only: true
+      - type: bind
+        source: /storage/data/climate/downscale/CMIP5
+        target: /storage/data/climate/downscale/CMIP5
+        read_only: true
+      - type: bind
+        source: /storage/data/climate/downscale/BCCAQ2
+        target: /storage/data/climate/downscale/BCCAQ2
+        read_only: true
+      - type: bind
+        source: /storage/data/projects/dataportal/data
+        target: /storage/data/projects/dataportal/data
+        read_only: true
+      - type: bind
+        source: /storage/data/climate/PRISM/dataportal
+        target: /storage/data/climate/PRISM/dataportal
+        read_only: true
+      - type: bind
+        source: /storage/data/projects/hydrology/dataportal
+        target: /storage/data/projects/hydrology/dataportal
+        read_only: true

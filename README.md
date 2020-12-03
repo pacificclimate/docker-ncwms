@@ -25,7 +25,8 @@ To deploy an instance of `docker-ncwms`:
      cp -r .ncWMS2/ deploy/  
      ```
 1. Edit your copy of `tomcat/config.xml` as follows:
-   - Replace the password placeholder with the password for this instance.
+   - Replace the username and password placeholders with the desired values 
+     for this instance.
 1. Edit your copy of `.env` as follows:
    - Change the value of `DEPLOY_DIR` to the deployment directory you created.
    - Change the value of `VERSION` to the version of `docker-ncwms` you wish to 
@@ -50,3 +51,21 @@ Notes:
 - Because the ncWMS configuration file 
   (`.ncWMS/config.xml`) is externally mounted, configuration changes made
   using the ncWMS Admin interface persist between restarts of the container.
+- The palettes defined in `.ncWMS2/.palettes` are custom ones used by PDP.
+  If any further palettes are needed for any apps, please add them to this
+  repo.
+
+## Releasing
+
+To create a versioned release:
+
+1. Summarize the changes from the last version in `NEWS.md`
+1. Commit these changes, then tag the release.
+1. Push to the repo.
+
+  ```bash
+git add NEWS.md
+git commit -m"Bump to version x.x.x"
+git tag -a -m"x.x.x" x.x.x
+git push --follow-tags
+  ```

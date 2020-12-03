@@ -22,7 +22,7 @@ RUN unzip sis-embedded-data-1.0.jar && \
 ENV SIS_DATA=/usr/local/tomcat/SIS_DATA
 
 # Download the ncWMS 2.5.1 snapshot (pre-release version).
-# Note error in version number in release name: 1.5.1 should be 2.5.1.
+# Note ncWMS numbered their release incorrectly: they said 1.5.1 but meant 2.5.1.
 ADD --chown=tomcat:tomcat \
     https://github.com/Reading-eScience-Centre/ncwms/releases/download/1.5.1-SNAPSHOT-dynamic-dataset-fix/ncWMS2.war \
     $CATALINA_HOME/webapps/ncWMS.war

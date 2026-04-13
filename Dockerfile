@@ -1,5 +1,9 @@
 FROM tomcat:9-jdk11
-MAINTAINER James Hiebert <hiebert@uvic.ca>
+LABEL Maintainer="James Hiebert <hiebert@uvic.ca>"
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends unzip && \
+    rm -rf /var/lib/apt/lists/*
 
 # Add Tomcat User/Group
 ARG RUN_USER=tomcat

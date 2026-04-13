@@ -30,4 +30,4 @@ jobs:
           push: true
           tags: |
             pcic/docker-ncwms:${{ github.ref_name }}
-            ${{ github.ref_name == 'main' && 'pcic/docker-ncwms:latest' || '' }}
+            ${{ github.ref_name == 'master' && 'pcic/docker-ncwms:latest' || '' }}
